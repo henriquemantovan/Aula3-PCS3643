@@ -20,25 +20,7 @@ python3 -m uvicorn main:app --reload
 Acesse o Swagger em:
 - http://localhost:8000/docs
 
-## 3. Persistência
-
-Os dados são salvos em SQLite no mesmo arquivo:
-
-```text
-cinema.db
-```
-
-## 4. Formato de data
-
-A API usa datas no formato:
-
-```text
-dd-mm-aaaa
-```
-
-Exemplo: `17-09-2026`
-
-## 5. Endpoints
+## 3. Endpoints
 
 Todos os endpoints ficam sob o prefixo:
 
@@ -46,36 +28,36 @@ Todos os endpoints ficam sob o prefixo:
 /cinema
 ```
 
-### 5.1. Valores de ingresso
+### 3.1. Valores de ingresso
 - `POST /cinema/valor-ingresso`
 - `PUT /cinema/valor-ingresso/update/{tipo_sala_nome}`
 - `DELETE /cinema/valor-ingresso/{tipo_sala_nome}`
 - `GET /cinema/valor-ingresso`
 
-### 5.2. Salas
+### 3.2. Salas
 - `POST /cinema/salas`
 - `PUT /cinema/salas/update/{numero_sala}`
 - `DELETE /cinema/salas/{numero_sala}`
 - `GET /cinema/salas`
 
-### 5.3. Filmes
+### 3.3. Filmes
 - `POST /cinema/filmes`
 - `PUT /cinema/filmes/update/{codigo_filme}`
 - `DELETE /cinema/filmes/{codigo_filme}`
 - `GET /cinema/filmes`
 - `GET /cinema/filmes/data/{data}`
 
-### 5.4. Sessões
+### 3.4. Sessões
 - `POST /cinema/sessoes`
 - `PUT /cinema/sessoes/update/{codigo_sessao}`
 - `DELETE /cinema/sessoes/{codigo_sessao}`
 - `GET /cinema/sessoes`
 
-### 5.5. Ingressos
+### 3.5. Ingressos
 - `POST /cinema/sessoes/{codigo_sessao}/ingressos`
 - `DELETE /cinema/sessoes/{codigo_sessao}/ingressos`
 
-## 6. Observações
+## 4. Observações
 
 - A aplicação salva tudo em um único banco SQLite: `cinema.db`.
 - O Swagger fica em `/docs` e pode ser usado para testar os endpoints no navegador.
